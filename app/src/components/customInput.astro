@@ -59,6 +59,12 @@ const { label, id, name, placeholder, type, required, options } = Astro.props;
 	.select-dropdown {
 		padding: 12px 0;
 	}
+
+	.error {
+		color: red !important;
+		font-size: 14px;
+		margin-top: 5px;
+	}
 </style>
 
 <div class="input-container">
@@ -72,6 +78,7 @@ const { label, id, name, placeholder, type, required, options } = Astro.props;
 				rows={4}
 			/>
 			<label for={id}>{label}</label>
+			<div class="error" id={`${id}-error`} />
 		</>
 	)}
 
@@ -85,6 +92,7 @@ const { label, id, name, placeholder, type, required, options } = Astro.props;
 				required={required}
 			/>
 			<label for={id}>{label}</label>
+			<div class="error" id={`${id}-error`} />
 		</>
 	)}
 
@@ -100,6 +108,7 @@ const { label, id, name, placeholder, type, required, options } = Astro.props;
 				))}
 			</select>
 			<label for={id}>{label}</label>
+			<div class="error" id={`${id}-error`} />
 		</>
 	)}
 </div>
