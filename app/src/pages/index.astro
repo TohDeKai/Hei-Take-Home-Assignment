@@ -1,16 +1,46 @@
 ---
-
+import CustomInput from "../components/customInput.astro";
 ---
+
+<style>
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  .container {
+    margin: 300px 120px;
+    width: 50%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Astro" />
     <title>Astro</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <h1>Astro</h1>
+    <div class="container">
+      <h1>
+        Please fill out your details, and we’ll get a <br />meeting on the
+        calendar.
+      </h1>
+      <form>
+        <CustomInput
+          label="First name"
+          id="firstName"
+          name="firstName"
+          required={true}
+        />
+      </form>
+    </div>
   </body>
 </html>
