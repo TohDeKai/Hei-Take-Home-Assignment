@@ -11,7 +11,7 @@ This project took approximately **3 hours** to complete.
 
 ## Key Takeaways
 - **CSS Refresher**: Working with raw CSS again was a great way to appreciate its nuances. Tailwind has been my go-to recently, but this reminded me of the beauty and flexibility of custom styles.
-- **The Challenge of `<select>`**: The trickiest part was getting the `<select>` element to behave like the `<input>` and `<textarea>` elements. It's safe to say it didn’t play nice at first, but with some persistence and creativity, I got it sorted out. 💪
+- **The Challenge of `<select>`**: The trickiest part was getting the `<select>` element to behave like the `<input>` and `<textarea>` elements. It's safe to say it didn’t play nice at first, but with some persistence and creativity, I got it sorted out. 
 
 ## What I Learned
 - Reacquainted myself with CSS selectors and transitions.
@@ -22,7 +22,7 @@ This assignment was a great exercise, and I genuinely enjoyed working through th
 
 Looking forward to hearing from you! 
 
-## 🚀 How to Run the Project
+## How to Run the Project
 ```shell
 git clone https://github.com/TohDeKai/Hei-Take-Home-Assignment.git
 cd app
