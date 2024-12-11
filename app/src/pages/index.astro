@@ -17,6 +17,50 @@ import CustomInput from "../components/customInput.astro";
 		display: flex;
 		flex-direction: column;
 	}
+
+	h1 {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 400;
+		font-size: 1.5rem;
+	}
+
+	button {
+		padding: 16px 32px;
+		background-color: transparent;
+		border: 2px solid #843cd4;
+		color: white;
+		font-family: monospace;
+		border-radius: 3rem;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+		position: relative;
+		overflow: hidden;
+		z-index: 0;
+		align-self: start;
+	}
+	button::after {
+		content: "";
+		background-color: #843cd4;
+		border-radius: 3rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateY(100%);
+		transition: all 0.2s ease-out;
+		z-index: -1;
+	}
+
+	button:hover {
+		color: white;
+		border: 2px solid transparent;
+		transform: scale(1.05);
+	}
+
+	button:hover::after {
+		transform: translateY(0);
+	}
 </style>
 
 <meta charset="utf-8" />
@@ -28,7 +72,7 @@ import CustomInput from "../components/customInput.astro";
 <body>
 	<div class="container">
 		<h1>
-			Please fill out your details, and we’ll get a <br />meeting on the
+			Please fill out your details, and we’ll get a meeting on the
 			calendar.
 		</h1>
 		<form>
@@ -95,6 +139,7 @@ import CustomInput from "../components/customInput.astro";
 				type="textarea"
 				required={true}
 			/>
+			<button>Submit &gt;</button>
 		</form>
 	</div>
 </body>

@@ -38,9 +38,11 @@ const { label, id, name, placeholder, type, required, options } = Astro.props;
 		pointer-events: none;
 		transition: all 0.3s ease;
 		transform-origin: left top;
+		font-family: monospace;
 	}
 
-	.input-container:focus-within label input:not(:placeholder-shown) + label,
+	.input-container:focus-within label,
+	input:not(:placeholder-shown) + label,
 	textarea:not(:placeholder-shown) + label,
 	select:valid + label {
 		top: -4px;
