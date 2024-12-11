@@ -70,6 +70,24 @@ import CustomInput from "../components/customInput.astro";
           required={true}
         />
         <CustomInput
+          label="How did you hear about us?"
+          id="referral"
+          name="referral"
+          type="dropdown"
+          options={[
+            { value: "", label: "" },
+            { value: "wpp_groupm", label: "WPP / GroupM Agency" },
+            { value: "google_internet", label: "Google / Internet Search" },
+            { value: "twitter", label: "Twitter" },
+            { value: "linkedin", label: "LinkedIn" },
+            { value: "other_soc_med", label: "Other Social Media" },
+            { value: "print", label: "Print Media" },
+            { value: "word_of_mouth", label: "Word of Mouth" },
+            { value: "other", label: "Other" },
+          ]}
+          required={true}
+        />
+        <CustomInput
           label="Let us know how we can help"
           id="comments"
           name="comments"
