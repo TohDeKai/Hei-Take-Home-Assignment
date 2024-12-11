@@ -3,98 +3,98 @@ import CustomInput from "../components/customInput.astro";
 ---
 
 <style>
-  body {
-    background-color: black;
-    color: white;
-  }
+	body {
+		background-color: black;
+		color: white;
+	}
 
-  .container {
-    margin: 300px 120px;
-    width: 50%;
-  }
+	.container {
+		margin: 300px 120px;
+		width: 50%;
+	}
 
-  form {
-    display: flex;
-    flex-direction: column;
-  }
+	form {
+		display: flex;
+		flex-direction: column;
+	}
 </style>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content="Astro" />
-    <title>Astro</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>
-        Please fill out your details, and we’ll get a <br />meeting on the
-        calendar.
-      </h1>
-      <form>
-        <CustomInput
-          label="First name"
-          id="firstName"
-          name="firstName"
-          type="text"
-          required={true}
-        />
-        <CustomInput
-          label="Last name"
-          id="lastName"
-          name="lastName"
-          type="text"
-          required={true}
-        />
-        <CustomInput
-          label="Company name"
-          id="companyName"
-          name="companyName"
-          type="text"
-          required={true}
-        />
-        <CustomInput
-          label="Job title"
-          id="jobTitle"
-          name="jobTitle"
-          type="text"
-          required={true}
-        />
-        <CustomInput
-          label="Business email"
-          id="businessEmail"
-          name="businessEmail"
-          type="text"
-          required={true}
-        />
-        <CustomInput
-          label="How did you hear about us?"
-          id="referral"
-          name="referral"
-          type="dropdown"
-          options={[
-            { value: "", label: "" },
-            { value: "wpp_groupm", label: "WPP / GroupM Agency" },
-            { value: "google_internet", label: "Google / Internet Search" },
-            { value: "twitter", label: "Twitter" },
-            { value: "linkedin", label: "LinkedIn" },
-            { value: "other_soc_med", label: "Other Social Media" },
-            { value: "print", label: "Print Media" },
-            { value: "word_of_mouth", label: "Word of Mouth" },
-            { value: "other", label: "Other" },
-          ]}
-          required={true}
-        />
-        <CustomInput
-          label="Let us know how we can help"
-          id="comments"
-          name="comments"
-          type="textarea"
-          required={true}
-        />
-      </form>
-    </div>
-  </body>
-</html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Astro" />
+<title>Astro</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<body>
+	<div class="container">
+		<h1>
+			Please fill out your details, and we’ll get a <br />meeting on the
+			calendar.
+		</h1>
+		<form>
+			<CustomInput
+				label="First name"
+				id="firstName"
+				name="firstName"
+				type="text"
+				required={true}
+			/>
+			<CustomInput
+				label="Last name"
+				id="lastName"
+				name="lastName"
+				type="text"
+				required={true}
+			/>
+			<CustomInput
+				label="Company name"
+				id="companyName"
+				name="companyName"
+				type="text"
+				required={true}
+			/>
+			<CustomInput
+				label="Job title"
+				id="jobTitle"
+				name="jobTitle"
+				type="text"
+				required={true}
+			/>
+			<CustomInput
+				label="Business email"
+				id="businessEmail"
+				name="businessEmail"
+				type="text"
+				required={true}
+			/>
+			<CustomInput
+				label="How did you hear about us?"
+				id="referral"
+				name="referral"
+				type="dropdown"
+				options={[
+					{ value: "", label: "" },
+					{ value: "wpp_groupm", label: "WPP / GroupM Agency" },
+					{
+						value: "google_internet",
+						label: "Google / Internet Search",
+					},
+					{ value: "twitter", label: "Twitter" },
+					{ value: "linkedin", label: "LinkedIn" },
+					{ value: "other_soc_med", label: "Other Social Media" },
+					{ value: "print", label: "Print Media" },
+					{ value: "word_of_mouth", label: "Word of Mouth" },
+					{ value: "other", label: "Other" },
+				]}
+				required={true}
+			/>
+			<CustomInput
+				label="Let us know how we can help"
+				id="comments"
+				name="comments"
+				type="textarea"
+				required={true}
+			/>
+		</form>
+	</div>
+</body>

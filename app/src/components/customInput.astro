@@ -3,103 +3,101 @@ const { label, id, name, placeholder, type, required, options } = Astro.props;
 ---
 
 <style>
-  .input-container {
-    position: relative;
-    margin-bottom: 20px;
-  }
+	.input-container {
+		position: relative;
+		margin-bottom: 20px;
+	}
 
-  input,
-  textarea,
-  select {
-    width: 100%;
-    padding: 16px 0;
-    margin-top: 10px;
-    border: 1px solid transparent;
-    border-bottom: 1px solid #843cd4;
-    background-color: transparent;
-    color: white;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-  }
+	input,
+	textarea,
+	select {
+		width: 100%;
+		padding: 16px 0;
+		margin-top: 10px;
+		border: 1px solid transparent;
+		border-bottom: 1px solid #843cd4;
+		background-color: transparent;
+		color: white;
+		font-size: 16px;
+		transition: border-color 0.3s ease;
+	}
 
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-bottom: 1px solid #843cd4; /* Color when focused */
-    outline: transparent;
-  }
+	input:focus,
+	textarea:focus,
+	select:focus {
+		border-bottom: 1px solid #843cd4;
+		outline: transparent;
+	}
 
-  label {
-    position: absolute;
-    top: 24px;
-    left: 0;
-    font-size: 16px;
-    color: white; /* Default label color */
-    pointer-events: none;
-    transition: all 0.3s ease; /* Smooth transition */
-    transform-origin: left top;
-  }
+	label {
+		position: absolute;
+		top: 24px;
+		left: 0;
+		font-size: 16px;
+		color: white;
+		pointer-events: none;
+		transition: all 0.3s ease;
+		transform-origin: left top;
+	}
 
-.input-container:focus-within label,
-  input:not(:placeholder-shown) + label,
-  textarea:not(:placeholder-shown) + label,
-    select:valid + label {
-    top: -4px;
-    color: #843cd4;
-    font-size: 18px;
-  }{
-    top: -4px;
-    color: #843cd4; 
-    font-size: 18px; /* Make label smaller when focused */
-  }
+	.input-container:focus-within label input:not(:placeholder-shown) + label,
+	textarea:not(:placeholder-shown) + label,
+	select:valid + label {
+		top: -4px;
+		color: #843cd4;
+		font-size: 18px;
+	}
 
+	.input-container:focus-within label {
+		top: -4px;
+		color: #843cd4;
+		font-size: 18px;
+	}
 
-  .select-dropdown {
-    padding: 12px 0;
-  }
+	.select-dropdown {
+		padding: 12px 0;
+	}
 </style>
 
 <div class="input-container">
-  {
-    type === "textarea" && (
-      <>
-        <textarea
-          id={id}
-          name={name}
-          placeholder=" "
-          required={required}
-          rows={4}
-        />
-        <label for={id}>{label}</label>
-      </>
-    )
-  }
+	{type === "textarea" && (
+		<>
+			<textarea
+				id={id}
+				name={name}
+				placeholder=" "
+				required={required}
+				rows={4}
+			/>
+			<label for={id}>{label}</label>
+		</>
+	)}
 
-  {
-    type === "text" && (
-      <>
-        <input
-          type="text"
-          id={id}
-          name={name}
-          placeholder=" "
-          required={required}
-        />
-        <label for={id}>{label}</label>
-      </>
-    )
-  }
+	{type === "text" && (
+		<>
+			<input
+				type="text"
+				id={id}
+				name={name}
+				placeholder=" "
+				required={required}
+			/>
+			<label for={id}>{label}</label>
+		</>
+	)}
 
-  {
-    type === "dropdown" && options && (
-      <>
-        <select id={id} name={name} required={required} class="select-dropdown">
-          {options.map((option: any) => (
-            <option value={option.value}>{option.label}</option>
-          ))}
-        </select>
-        <label for={id}>{label}</label>
-      </>
-    )
-  }
+	{type === "dropdown" && options && (
+		<>
+			<select
+				id={id}
+				name={name}
+				required={required}
+				class="select-dropdown">
+				{options.map((option: any) => (
+					<option value={option.value}>{option.label}</option>
+				))}
+			</select>
+			<label for={id}>{label}</label>
+		</>
+	)}
 </div>
