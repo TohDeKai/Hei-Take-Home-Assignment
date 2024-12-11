@@ -1,6 +1,6 @@
 ---
 // Define props for the component
-const { label, id, name, placeholder, required } = Astro.props;
+const { label, id, name, placeholder, type, required } = Astro.props;
 ---
 
 <style>
@@ -23,7 +23,7 @@ const { label, id, name, placeholder, required } = Astro.props;
     position: absolute;
     top: 24px;
     font-size: 16px;
-    color: #bbb;
+    color: white;
     pointer-events: none;
     transition: all 0.5s ease;
     transform-origin: left top;
@@ -40,9 +40,50 @@ const { label, id, name, placeholder, required } = Astro.props;
     border-bottom: 1px solid #843cd4;
     outline: transparent;
   }
+
+  textarea {
+    width: 100%;
+    padding: 16px 0px;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #843cd4;
+    background-color: transparent;
+    color: white;
+  }
+
+  textarea:focus + label,
+  textarea:not(:placeholder-shown) + label {
+    top: -4px;
+    color: #843cd4;
+  }
+
+  textarea:focus {
+    border: 1px solid transparent;
+    border-bottom: 1px solid #843cd4;
+    outline: transparent;
+  }
 </style>
 
 <div class="input-container">
-  <input type="text" id={id} name={name} placeholder=" " required={required} />
+  {
+    type == "textarea" ? (
+      <textarea
+        id={id}
+        name={name}
+        placeholder=" "
+        required={required}
+        rows={4}
+      />
+    ) : (
+      <input
+        type={type}
+        id={id}
+        name={name}
+        placeholder=" "
+        required={required}
+      />
+    )
+  }
+
   <label for={id}>{label}</label>
 </div>
